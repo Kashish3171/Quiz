@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div ng-show="inProgress">
+ 			</div>
+ 			<div ng-show="!inProgress">
+ 				<h2>Welcome to Quiz App</h2>
+ 				<button type="button" class="btn btn-primary" style="width:100px;" ng-click="start()">Start</button>
+ 			</div>
+    </div>
+    <div class="row">
+    	<div ng-show="inProgress">
+    	
+    		<div ng-show="!quizOver">
+    			<h2>{{question}}</h2>
+    			<ul>
+    				<li ng-repeat="option in options">
+    					<label>
+    						<input type="radio" name="answer" value="{{option}}">
+    						{{option}}
+    					</label>
+    				</li>
+    			</ul>
+    			<button type="button" class="btn btn-info" ng-click="checkAns()" ng-show="answerMode">Submit
+    			</button>
+    			<div ng-show="!answerMode">
+    				<button type="button" class="btn btn-info" ng-click="nextQue()">Next
+    				</button>
+    				<span ng-show="correctAns"><h3>This is Correct</h3></span>
+    				<span ng-show="!correctAns"><h3>Sorry,this is Incorrect</h3></span>
+
+    			</div>
+
+    		</div>
+    		<div ng-show="quizOver">
+    	 		<h2>Quiz is Over</h2>
+    	 		<button class="btn btn-primary" ng-click="reset()" >Play Again</button>
+    		</div>
+        	<div>
+        		<h3>Score:{{score}}</h3> 	
+        	</div>
+        </div>	
+
+  </div>
+</body>
+</html>
+</body>
+</html>
